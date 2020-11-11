@@ -56,6 +56,7 @@ export default function ConsultaFuncs() {
                   Funcionários
                 </Link>
               </h4>
+              <hr className="hr-link"></hr>
             </div>
           </div>
           <div className="col">

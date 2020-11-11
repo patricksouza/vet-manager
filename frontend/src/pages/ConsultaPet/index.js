@@ -50,7 +50,7 @@ export default function ConsultaPet() {
   return (
     <div className="consulta-container">
       <header>
-        <img className="" src={logoImg} alt="Gestão Vet" />f 
+        <img className="" src={logoImg} alt="Gestão Vet" />
         <span>Bem vindo, {clienteNome}</span>
 
         <Link className="button-index btn-left" to="/pet/new">
