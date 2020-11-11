@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { FiPower, FiTrash2 } from "react-icons/fi";
 import { Row, Col } from "react-bootstrap";
 import api from "../../services/api"; // import comunicação com backend
-
+import Footer from '../../components/Footer';
 import "./styles.css";
 
 import logoImg from "../../assets/profile.svg";
@@ -67,19 +67,19 @@ export default function Consulta() {
       <div className="container py-5">
         <div className="row">
           <div className="col">
-            <h4 className="text-center">
-              <Link className="color-link" to="/consulta">Consultas</Link>
-              <hr className="hr-link"></hr>
-            </h4>
+            <span className="tab">
+              <h4 className="text-center">
+                <Link className="color-link" to="/consulta">Consultas</Link>
+              </h4>
+            </span>
           </div>
 
-          <div className="col">
+          <div className="col py-1">
             <h4 className="text-center">
               <Link className="color-link" to="/consulta/pet">Pet</Link>
             </h4>
           </div>
         </div>
-
       </div>
 
       <div className="py-5">
@@ -119,6 +119,7 @@ export default function Consulta() {
           ))}
         </ul>
       </div>
+      <Footer/>
     </div>
   );
 }

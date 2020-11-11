@@ -51,12 +51,13 @@ export default function ConsultaFuncs() {
             </h4>
           </div>
           <div className="col">
+          <span className="tab">
             <h4 className="text-center">
               <Link className="color-link" to="/dashboard/consulta">
                 Consultas
               </Link>
-              <hr className="hr-link"></hr>
             </h4>
+            </span>
           </div>
           <div className="col">
             <h4 className="text-center">

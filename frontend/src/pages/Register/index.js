@@ -40,7 +40,7 @@ export default function Register() {
     <div className="container register-container">
       <div className="content">
         <section>
-          <h1 className="center">Cadastra-se</h1>
+          <h1 className="center">Cadastre-se</h1>
           
           <img className="img-logo-form" src={logoImg} alt="Gestão Vet" />
           <p>Faça seu cadastro, entre na plataforma e agende a sua consulta.</p>

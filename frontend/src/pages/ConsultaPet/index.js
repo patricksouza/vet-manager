@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiPower, FiTrash2 } from "react-icons/fi";
-import { Row, Col } from "react-bootstrap";
+import { Card, ListGroup, Row, Col } from "react-bootstrap";
+import Footer from '../../components/Footer';
 import api from "../../services/api"; // import comunicação com backend
 
 import "./styles.css";
@@ -66,7 +67,7 @@ export default function ConsultaPet() {
       <hr></hr>
       <div className="container py-5">
         <div className="row">
-          <div className="col">
+          <div className="col py-2">
             <h4 className="text-center">
               <Link className="color-link" to="/consulta">
                 Consultas
@@ -74,62 +75,50 @@ export default function ConsultaPet() {
             </h4>
           </div>
           <div className="col">
-            <h4 className="text-center">
-              <Link className="color-link" to="/consulta/pet">
-                Pet
+            <span className="tab">
+              <h4 className="text-center">
+                <Link className="color-link" to="/consulta/pet">
+                  Pet
               </Link>
-              <hr className="hr-link"></hr>
-            </h4>
+              </h4>
+            </span>
           </div>
         </div>
       </div>
       <div className="py-5">
-        <ul>
+        <Row>
           {consultas.map((consulta) => (
-            <li key={consulta.email}>
-              <Row>
-                <Col>
-                  <strong>Nome do pet:</strong>
-                  <p>{consulta.nome}</p>
+            <div key={consulta.id}>
+                 <Col md={2}>
+                  <Card className="shadow-sm" style={{ width: '18rem' }}>
+                    <Card.Header>
+                      <Row>
+                        <Col>
+                          <h5>Informações do pet</h5>
+                        </Col>
+                        <Col md={2}>
+                          <button
+                            className="noBackground"
+                            onClick={() => handleDeleteConsultaPet(consulta.id)}
+                            type="button"
+                          >
+                            <FiTrash2 size={20} color="#C0C0C0" />
+                          </button>
+                        </Col>
+                      </Row>
+                    </Card.Header>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item><strong>Nome do pet:</strong> {consulta.nome}</ListGroup.Item>
+                      <ListGroup.Item><strong>Sexo: </strong>{consulta.sexo}</ListGroup.Item>
+                      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                    </ListGroup>
+                  </Card>
                 </Col>
-              </Row>
-
-              <Row>
-                <Col md={4}>
-                  <strong>Peso:</strong>
-                  <p>{consulta.peso} Kg</p>
-                </Col>
-                <Col>
-                  <strong>Idade:</strong>
-                  <p>{consulta.idade} Anos</p>
-                </Col>
-              </Row>
-
-              <Row>
-                <Col>
-                  <strong>Sexo:</strong>
-                  <p>{consulta.sexo}</p>
-                </Col>
-                <Col>
-                  <strong>Raça:</strong>
-                  <p>{consulta.raca}</p>
-                </Col>
-                <Col>
-                  <strong>Espécie:</strong>
-                  <p>{consulta.especie}</p>
-                </Col>
-              </Row>
-              <button
-                className="noBackground"
-                onClick={() => handleDeleteConsultaPet(consulta.id)}
-                type="button"
-              >
-                <FiTrash2 size={20} color="#a8a8b3" />
-              </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </Row>
       </div>
+      <Footer />
     </div>
   );
 }

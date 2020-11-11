@@ -90,6 +90,8 @@
   
   .noBackground{
     background: none;
+    border:none;
+    background-color: none;
   }
   
   

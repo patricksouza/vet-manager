@@ -93,3 +93,9 @@ form input {
     border:none;
     border-radius: 4px;
 }
+
+.tab h4{
+    border:1px solid rgba(0,0,0,0.1);
+    padding: 2%;
+}
+  

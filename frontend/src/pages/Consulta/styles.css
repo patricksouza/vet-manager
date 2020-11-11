@@ -96,6 +96,7 @@
   margin-left: 27% !important;  
 }
 
+
 .button-index {
   width:20% !important;
   height: 45px;
@@ -107,7 +108,7 @@
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  font-size: 13spx !important;
+  font-size: 15px !important;
   line-height: 40px;
   transition: filter 0.2s;
 }
@@ -120,7 +121,6 @@
 
 .color-link{
   color:#00a85a;
-
 }
 
 .color-link:hover{
