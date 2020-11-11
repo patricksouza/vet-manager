@@ -8,7 +8,7 @@ import "./styles.css";
 
 import logoImg from "../../assets/adm_index.svg";
 
-import { Row, Col } from "react-bootstrap";
+import { Card,ListGroup, Row, Col } from "react-bootstrap";
 
 export default function ConsultaPet() {
   const history = useHistory();
@@ -62,12 +62,13 @@ export default function ConsultaPet() {
             </h4>
           </Col>
           <Col>
-            <h4 className="text-center">
-              <Link className="color-link" to="/dashboard/pet">
-                Pets
+            <span className="tab shadow-sm">
+              <h4 className="text-center">
+                <Link className="color-link" to="/dashboard/pet">
+                  Pets
               </Link>
-              <hr className="hr-link"></hr>
-            </h4>
+              </h4>
+            </span>
           </Col>
 
           <Col>
@@ -80,44 +81,27 @@ export default function ConsultaPet() {
         </Row>
       </div>
       <div className="py-5">
-        <ul>
+        <Row>
           {consultas.map((consulta) => (
-            <li key={consulta.email}>
-              <Row>
-                <Col>
-                  <strong>Nome do pet:</strong>
-                  <p>{consulta.nome}</p>
-                </Col>
-              </Row>
-              <Row>
-
-                <Col>
-                  <strong>Peso:</strong>
-                  <p>{consulta.peso} Kg</p>
-                </Col>
-                <Col>
-                  <strong>Idade:</strong>
-                  <p>{consulta.idade} anos</p>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <strong>Sexo:</strong>
-                  <p>{consulta.sexo}</p>
-                </Col>
-
-                <Col>
-                  <strong>Raça:</strong>
-                  <p>{consulta.raca}</p>
-                </Col>
-                <Col>
-                  <strong>Espécie:</strong>
-                  <p>{consulta.especie}</p>
-                </Col>
-              </Row>
-            </li>
+            <div key={consulta.id}>
+              <Col md={2}>
+                <Card className="shadow-sm" style={{ width: '25rem' }}>
+                    <Card.Header>
+                       <h5> Informações do pet: </h5>
+                    </Card.Header>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item><strong>Nome do pet: </strong> {consulta.nome}</ListGroup.Item>
+                        <ListGroup.Item><strong>Peso: </strong> {consulta.peso}</ListGroup.Item>
+                        <ListGroup.Item><strong>Idade: </strong> {consulta.idade}</ListGroup.Item>
+                        <ListGroup.Item><strong>Sexo: </strong>{consulta.sexo}</ListGroup.Item>
+                        <ListGroup.Item><strong>Raça: </strong>{consulta.raca}</ListGroup.Item>
+                        <ListGroup.Item><strong>Espécie: </strong> {consulta.especie}</ListGroup.Item>
+                    </ListGroup>
+                </Card>
+              </Col>
+            </div>
           ))}
-        </ul>
+        </Row>
       </div>
     </div>
   );

@@ -94,7 +94,7 @@ export default function ConsultaPet() {
                     <Card.Header>
                       <Row>
                         <Col>
-                          <h5>Informações do pet</h5>
+                          <h5>Informações do pet: </h5>
                         </Col>
                         <Col md={2}>
                           <button

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-
+import Footer from '../../components/Footer';
 import api from '../../services/api'; // import comunicação com backend
 
 import './styles.css';
@@ -37,7 +37,8 @@ export default function Register() {
   }
 
   return (
-    <div className="container register-container">
+    <>
+        <div className="container register-container">
       <div className="content">
         <section>
           <h1 className="center">Cadastre-se</h1>
@@ -105,5 +106,7 @@ export default function Register() {
         </form>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

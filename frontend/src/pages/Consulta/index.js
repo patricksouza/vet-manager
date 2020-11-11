@@ -67,7 +67,7 @@ export default function Consulta() {
       <div className="container py-5">
         <div className="row">
           <div className="col">
-            <span className="tab">
+            <span className="tab shadow-sm">
               <h4 className="text-center">
                 <Link className="color-link" to="/consulta">Consultas</Link>
               </h4>

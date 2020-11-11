@@ -51,12 +51,13 @@ export default function ConsultaFuncs() {
         <div className="row">
           <div className="col">
             <div className="tab-option">
+            <span className="tab shadow-sm">
               <h4 className="text-center">
                 <Link className="color-link" to="/consulta">
                   Funcionários
                 </Link>
               </h4>
-              <hr className="hr-link"></hr>
+              </span>
             </div>
           </div>
           <div className="col">

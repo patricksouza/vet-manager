@@ -70,12 +70,13 @@ export default function ConsultaPet() {
           </Col>
          
           <Col>
+          <span className="tab shadow-sm">
             <h4 className="text-center">
               <Link className="color-link" to="/dashboard/clientes">
                 Clientes
               </Link>
-              <hr className="hr-link"></hr>
             </h4>
+            </span>
           </Col>
         </Row>
       </div>
