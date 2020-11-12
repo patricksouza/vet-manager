@@ -89,31 +89,31 @@ export default function ConsultaPet() {
         <Row>
           {consultas.map((consulta) => (
             <div key={consulta.id}>
-                 <Col md={2}>
-                  <Card className="shadow-sm" style={{ width: '18rem' }}>
-                    <Card.Header>
-                      <Row>
-                        <Col>
-                          <h5>Informações do pet: </h5>
-                        </Col>
-                        <Col md={2}>
-                          <button
-                            className="noBackground"
-                            onClick={() => handleDeleteConsultaPet(consulta.id)}
-                            type="button"
-                          >
-                            <FiTrash2 size={20} color="#C0C0C0" />
-                          </button>
-                        </Col>
-                      </Row>
-                    </Card.Header>
-                    <ListGroup variant="flush">
-                      <ListGroup.Item><strong>Nome do pet:</strong> {consulta.nome}</ListGroup.Item>
-                      <ListGroup.Item><strong>Sexo: </strong>{consulta.sexo}</ListGroup.Item>
-                      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-                    </ListGroup>
-                  </Card>
-                </Col>
+              <Col md={2}>
+                <Card className="shadow-sm border-light" style={{ width: '18rem' }}>
+                  <Card.Header className="bg-light">
+                    <Row>
+                      <Col>
+                        <h5>Informações do pet: </h5>
+                      </Col>
+                      <Col md={2}>
+                        <button
+                          className="noBackground"
+                          onClick={() => handleDeleteConsultaPet(consulta.id)}
+                          type="button"
+                        >
+                          <FiTrash2 size={20} color="#C0C0C0" />
+                        </button>
+                      </Col>
+                    </Row>
+                  </Card.Header>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item><strong>Nome do pet:</strong> {consulta.nome}</ListGroup.Item>
+                    <ListGroup.Item><strong>Sexo: </strong>{consulta.sexo}</ListGroup.Item>
+                    <ListGroup.Item><strong>Idade: </strong>{consulta.idade}</ListGroup.Item>
+                  </ListGroup>
+                </Card>
+              </Col>
             </div>
           ))}
         </Row>
