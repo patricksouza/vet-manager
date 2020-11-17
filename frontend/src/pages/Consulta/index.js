@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiPower, FiTrash2 } from "react-icons/fi";
-import { Row, Col } from "react-bootstrap";
+import swal from 'sweetalert';
+import { Row, Col, Card } from "react-bootstrap";
 import api from "../../services/api"; // import comunicação com backend
 import Footer from '../../components/Footer';
 import "./styles.css";
@@ -48,7 +49,10 @@ export default function Consulta() {
   }
 
   return (
+
     <div className="consulta-container">
+
+
       <header>
         <img className="" src={logoImg} alt="Gestão Vet" />
         <span>Bem vindo, {clienteNome}</span>
@@ -82,44 +86,56 @@ export default function Consulta() {
         </div>
       </div>
 
-      <div className="py-5">
-        <ul >
+      <div className="container py-5">
+        <Row className="d-flex justify-content-center">
           {consultas.map((consulta) => (
-            <li className="shadow" key={consulta.email}>
-              <Row>
-                <Col>
-                  <strong>Especialidade:</strong>
-                  <p>{consulta.especialidade}</p>
-                </Col>
-                <Col>
-                  <strong>Pet:</strong>
-                  <p>{consulta.pet_id}</p>
-                </Col>
-              </Row>
-              <Row className="py-2">
-                <Col>
-                  <strong>Data:</strong>
-                  <p>{consulta.data}</p>
-                </Col>
+            <div className="" key={consulta.email}>
+              <Col className="mb-4" md={1}>
+                <Card className="shadow-sm" style={{ width: '18rem' }}>
+                  <Card.Header className="bg-light">
+                    <Row>
+                      <Col className="py-1">
+                        <p>Informações da consulta: </p>
+                      </Col>
+                      <Col md={2}>
+                        <button
+                          className="noBackground"
+                          onClick={() => {
+                            if (swal({
+                              title: "Are you sure?",
+                              text: "Once deleted, you will not be able to recover this imaginary file!",
+                              icon: "warning",
+                              buttons: true,
+                              dangerMode: true,
+                            }) handleDeleteConsulta(consulta.id)
+                          }}
+                          type="button"
+                        >
+                          <FiTrash2 size={20} color="#a8a8b3" />
+                        </button>
+                      </Col>
+                    </Row>
 
-                <Col>
-                  <strong>Hora:</strong>
-                  <p>{consulta.hora}</p>
-                </Col>
-              </Row>
+                  </Card.Header>
+                  <Card.Body>
 
-              <button
-                className="noBackground"
-                onClick={() => handleDeleteConsulta(consulta.id)}
-                type="button"
-              >
-                <FiTrash2 size={20} color="#a8a8b3" />
-              </button>
-            </li>
+                    <Card.Text>
+                      <p><strong>Especialidade: </strong> {consulta.especialidade}</p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p><strong>Data: </strong>{consulta.data}</p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p><strong>Hora: </strong>{consulta.hora}</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </div>
           ))}
-        </ul>
+        </Row>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
