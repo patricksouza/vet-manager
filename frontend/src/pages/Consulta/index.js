@@ -100,15 +100,23 @@ export default function Consulta() {
                       <Col md={2}>
                         <button
                           className="noBackground"
-                          onClick={() => {
-                            if (swal({
-                              title: "Are you sure?",
-                              text: "Once deleted, you will not be able to recover this imaginary file!",
-                              icon: "warning",
-                              buttons: true,
-                              dangerMode: true,
-                            }) handleDeleteConsulta(consulta.id)
-                          }}
+                          onClick={() => {swal({
+                            title: "Desmarcar consulta?",
+                            text: "",
+                            icon: "warning",
+                            buttons: true,
+                            dangerMode: true,
+                          })
+                          .then((willDelete) => {
+                            if (willDelete) {
+                              swal("Consulta desmarcada", {
+                                icon: "success",
+                              });
+                              handleDeleteConsulta(consulta.id)
+                            } else {
+                              swal("");
+                            }
+                          })}}
                           type="button"
                         >
                           <FiTrash2 size={20} color="#a8a8b3" />
@@ -116,7 +124,7 @@ export default function Consulta() {
                       </Col>
                     </Row>
 
-                  </Card.Header>
+                  </Card.Header>   
                   <Card.Body>
 
                     <Card.Text>
