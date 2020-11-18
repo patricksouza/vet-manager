@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-import Footer from '../../components/Footer';
 import api from '../../services/api'; // import comunicação com backend
 
 import './styles.css';
@@ -41,7 +40,7 @@ export default function NewConsulta() {
   return (
     <>
       <div className="new-consulta-container">
-        <div className="content shadow">
+        <div className="content shadow-sm">
           <section className="container">
             <h1>Cadastre sua nova consulta!</h1>
             <img className="img-logo-new left" src={logoImg} alt="Gestão Vet" />
@@ -93,7 +92,6 @@ export default function NewConsulta() {
           </form>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

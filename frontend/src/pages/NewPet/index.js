@@ -48,10 +48,10 @@ export default function NewPet() {
 
   return (
     <div className="new-consulta-container">
-      <div className="content shadow">
+      <div className="content shadow-sm">
         <section className="container">
           <h1 className="text-center">Cadastre seu pet!</h1>
-          <img className="img-logo-pet" src={logoImg} alt="Gestão Vet" />
+          <img className="img-logo-pet text-center" src={logoImg} alt="Gestão Vet" />
 
           <p>Preencha os campos ao lado para marcar uma consulta conosco.</p>
 

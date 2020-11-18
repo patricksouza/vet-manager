@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { FiPower } from "react-icons/fi";
 
 import api from "../../services/api"; // import comunicação com backend
-
+import { Row, Col, Card } from "react-bootstrap";
 import "./styles.css";
 
 import logoImg from "../../assets/adm_index.svg";
@@ -51,12 +51,12 @@ export default function ConsultaFuncs() {
             </h4>
           </div>
           <div className="col">
-          <span className="tab">
-            <h4 className="text-center">
-              <Link className="color-link" to="/dashboard/consulta">
-                Consultas
+            <span className="tab">
+              <h4 className="text-center">
+                <Link className="color-link" to="/dashboard/consulta">
+                  Consultas
               </Link>
-            </h4>
+              </h4>
             </span>
           </div>
           <div className="col">
@@ -76,38 +76,35 @@ export default function ConsultaFuncs() {
         </div>
       </div>
 
-      <div className="py-5">
-        <ul>
+      <div className="container py-5">
+        <Row className="d-flex justify-content-center">
           {consultas.map((consulta) => (
-            <li key={consulta.email}>
-              <div className="row">
-                <div className="col">
-                  <strong>E-mail do cliente:</strong>
-                  <p>{consulta.cliente_email}</p>
-                </div>
-                <div className="col">
-                  <strong>Especialidade:</strong>
-                  <p>{consulta.especialidade}</p>
-                </div>
-                <div className="col">
-                  <strong>Data:</strong>
-                  <p>{consulta.data}</p>
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-4">
-                  <strong>Hora:</strong>
-                  <p>{consulta.hora}</p>
-                </div>
-                <div className="col">
-                  <strong>Pet:</strong>
-                  <p>{consulta.pet_id}</p>
-                </div>
-              </div>
-            </li>
+            <div className="" key={consulta.email}>
+              <Col className="mb-4" md={1}>
+                <Card className="shadow-sm" style={{ width: '18rem' }}>
+                  <Card.Header className="bg-light">
+                    <Row>
+                      <Col className="py-1">
+                        <p>Informações da consulta: </p>
+                      </Col>
+                    </Row>
+                  </Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <p><strong>Especialidade: </strong> {consulta.especialidade}</p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p><strong>Data: </strong>{consulta.data}</p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p><strong>Hora: </strong>{consulta.hora}</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </div>
           ))}
-        </ul>
+        </Row>
       </div>
     </div>
   );

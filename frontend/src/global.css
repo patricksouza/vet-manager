@@ -99,4 +99,17 @@ form input {
     padding: 2%;
     background-color: #F8F8F8;
 }
-  
+
+.button:focus{
+    border:none !important;
+    box-shadow: none;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #818391;
+    text-align: center;
+  }
