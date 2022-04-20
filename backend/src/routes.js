@@ -10,8 +10,6 @@ const FuncionarioController = require('./controllers/FuncionarioController'); //
 const PetController = require('./controllers/PetController'); // Pet Controller
 const ConsultaController = require('./controllers/ConsultaController'); // Consulta Controller
 
-const { request } = require('express');
-
 const routes = express.Router();
 
 routes.post('/session_cliente', SessionClienteController.create); // Login Cliente

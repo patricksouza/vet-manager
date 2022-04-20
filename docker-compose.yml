@@ -15,7 +15,7 @@ services:
     build: ./backend/
     command: sh -c "npm run migrate && npm start"
     ports:
-     - 3332:3333
+     - 3332:3332
     volumes: 
      - ./src:/usr/app/api
     restart: unless-stopped

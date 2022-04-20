@@ -9,14 +9,14 @@ import './styles.css';
 import logoImg from '../../assets/new_func.svg';
 
 export default function NewConsulta() {
-  const [nome, setNomeFunc]  = useState('');
-  const [sobrenome,setSobreNomeFunc] = useState('');
+  const [nome, setNomeFunc] = useState('');
+  const [sobrenome, setSobreNomeFunc] = useState('');
   const [senha, setSenha] = useState('');
   const [email, setEmail] = useState('');
-  const [telefone,setTelefone] = useState('');
-  const [cidade,setCidade] = useState('');
-  const [estado,setEstado] = useState('');
-  const [cargo,setCargo] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [estado, setEstado] = useState('');
+  const [cargo, setCargo] = useState('');
   //const [status,setStatus] = useState('');
   const history = useHistory();
   const status = 'USER';
@@ -24,9 +24,9 @@ export default function NewConsulta() {
 
   async function handleNewConsulta(e) {
     e.preventDefault();
-    
+
     const dados = {
-      senha,nome,sobrenome,email,telefone,cidade, estado,cargo,status
+      senha, nome, sobrenome, email, telefone, cidade, estado, cargo, status
     };
 
     try {
@@ -47,7 +47,7 @@ export default function NewConsulta() {
       <div className="content">
         <section>
           <h1>Cadastre um funcionário!</h1>
-          <img className="img-logo-new left" src={logoImg} alt="Gestão Vet"/>
+          <img className="img-logo-new left" src={logoImg} alt="Gestão Vet" />
           <p>Preencha os campos ao lado para cadastrar um funcionário.</p>
 
           <Link className="back-link" to="/dashboard">
@@ -57,7 +57,7 @@ export default function NewConsulta() {
         </section>
 
         <form onSubmit={handleNewConsulta}>
-        <input
+          <input
             placeholder="Nome"
             value={nome}
             onChange={e => setNomeFunc(e.target.value)}
@@ -78,6 +78,7 @@ export default function NewConsulta() {
           />
           <input
             placeholder="Telefone"
+            type="number"
             value={telefone}
             onChange={e => setTelefone(e.target.value)}
             required="true"
@@ -100,7 +101,7 @@ export default function NewConsulta() {
             onChange={e => setCargo(e.target.value)}
             required="true"
           />
-           <input
+          <input
             placeholder="Senha"
             value={senha}
             type="password"
