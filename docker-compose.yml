@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  ui: 
+    build: ./frontend/
+    command: npm start
+    ports:
+     - 3002:3000
+    volumes: 
+     - ./src:/usr/app/src
+     - ./public:/usr/app/public
+
+
+  api:
+    build: ./backend/
+    command: sh -c "npm run migrate && npm start"
+    ports:
+     - 3332:3333
+    volumes: 
+     - ./src:/usr/app/api
+    restart: unless-stopped
