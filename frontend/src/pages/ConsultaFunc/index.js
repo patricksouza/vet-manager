@@ -97,7 +97,6 @@ export default function ConsultaFuncs() {
                   <strong>Sobrenome:</strong>
                   <p>{funcionarios.sobrenome}</p>
                 </div>
-                ,
                 <div className="col">
                   <strong>E-mail:</strong>
                   <p>{funcionarios.email}</p>

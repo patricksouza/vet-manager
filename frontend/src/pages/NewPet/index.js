@@ -67,26 +67,26 @@ export default function NewPet() {
             value={nome}
             type="text"
             onChange={(e) => setNome(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Raça"
             value={raca}
             onChange={(e) => setRaca(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Espécie"
             value={especie}
             onChange={(e) => setEspecie(e.target.value)}
-            required="true"
+            required={true}
           />
           <select
             placeholder=""
             value={sexo}
             onChange={(e) => setSexo(e.target.value)}
             className="select"
-            required="true"
+            required={true}
           >
             <option value="" disabled selected>
               Selecione um sexo
@@ -101,7 +101,7 @@ export default function NewPet() {
             type="number"
             min="0"
             onChange={(e) => setPeso(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Idade"
@@ -109,7 +109,7 @@ export default function NewPet() {
             type="number"
             min="0"
             onChange={(e) => setIdade(e.target.value)}
-            required="true"
+            required={true}
           />
 
           <button className="button" type="submit">

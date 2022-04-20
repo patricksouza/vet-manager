@@ -57,13 +57,13 @@ export default function NewConsulta() {
               placeholder="Nome do Pet"
               value={pet_id}
               onChange={e => setPet_id(e.target.value)}
-              required="true"
+              required={true}
             />
             <select
               placeholder="Especialidade"
               value={especialidade}
               onChange={e => setEspecialidade(e.target.value)}
-              required="true"
+              required={true}
               className="select"
             >
               <option value="" disabled selected>Selecione uma especialidade</option>
@@ -76,7 +76,7 @@ export default function NewConsulta() {
               type="date"
               value={data}
               onChange={e => setData(e.target.value)}
-              required="true"
+              required={true}
             />
 
             <input
@@ -84,7 +84,7 @@ export default function NewConsulta() {
               type="time"
               value={hora}
               onChange={e => setHora(e.target.value)}
-              required="true"
+              required={true}
             />
 
 

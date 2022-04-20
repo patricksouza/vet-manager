@@ -57,33 +57,33 @@ export default function Register() {
               placeholder="Email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              required="true"
+              required={true}
             />
             <input
               type="password"
               placeholder="Senha"
               value={senha}
               onChange={e => setSenha(e.target.value)}
-              required="true"
+              required={true}
             />
             <input
               placeholder="Nome"
               value={nome}
               onChange={e => setNome(e.target.value)}
-              required="true"
+              required={true}
             />
             <input
               placeholder="Sobrenome"
               value={sobrenome}
               onChange={e => setSobrenome(e.target.value)}
-              required="true"
+              required={true}
             />
             <input
               placeholder="Telefone"
               type="number"
               value={telefone}
               onChange={e => setTelefone(e.target.value)}
-              required="true"
+              required={true}
             />
 
             <div className="input-group">
@@ -92,7 +92,7 @@ export default function Register() {
                 value={cidade}
                 style={{ width: 360 }}
                 onChange={e => setCidade(e.target.value)}
-                required="true"
+                required={true}
               />
               <input
                 placeholder="UF"
@@ -100,7 +100,7 @@ export default function Register() {
                 style={{ width: 80 }}
                 value={estado}
                 onChange={e => setEstado(e.target.value)}
-                required="true"
+                required={true}
               />
             </div>
 

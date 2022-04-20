@@ -44,7 +44,7 @@ export default function Logon() {
                 placeholder="Seu email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                required="true"
+                required={true}
               />
             </div>
             <div>
@@ -53,7 +53,7 @@ export default function Logon() {
                 placeholder="Sua senha"
                 value={senha}
                 onChange={e => setSenha(e.target.value)}
-                required="true"
+                required={true}
               />
             </div>
             <button className="button" type="submit">Entrar</button>

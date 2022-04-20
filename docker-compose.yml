@@ -13,7 +13,7 @@ services:
 
   api:
     build: ./backend/
-    command: sh -c "npm run migrate && npm start"
+    command: sh -c "npm run migrate && npm run seed && npm start"
     ports:
      - 3332:3332
     volumes: 

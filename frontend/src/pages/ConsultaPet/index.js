@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiPower, FiTrash2 } from "react-icons/fi";
-import { Card, ListGroup, Row, Col } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import Footer from '../../components/Footer';
 import api from "../../services/api"; // import comunicação com backend
 
@@ -79,17 +79,17 @@ export default function ConsultaPet() {
               <h4 className="text-center">
                 <Link className="color-link" to="/consulta/pet">
                   Pet
-              </Link>
+                </Link>
               </h4>
             </span>
           </div>
         </div>
       </div>
-      <div className="py-5">
-        <Row>
+      <div className="container py-5">
+        <Row className="d-flex justify-content-center">
           {consultas.map((consulta) => (
             <div key={consulta.id}>
-              <Col md={2}>
+              <Col className="mb-4" md={2}>
                 <Card className="shadow-sm border-light" style={{ width: '18rem' }}>
                   <Card.Header className="bg-light">
                     <Row>
@@ -107,11 +107,17 @@ export default function ConsultaPet() {
                       </Col>
                     </Row>
                   </Card.Header>
-                  <ListGroup variant="flush">
-                    <ListGroup.Item><strong>Nome do pet:</strong> {consulta.nome}</ListGroup.Item>
-                    <ListGroup.Item><strong>Sexo: </strong>{consulta.sexo}</ListGroup.Item>
-                    <ListGroup.Item><strong>Idade: </strong>{consulta.idade}</ListGroup.Item>
-                  </ListGroup>
+                  <Card.Body>
+                    <Card.Text>
+                      <p><strong>Nome do pet: </strong> {consulta.nome}</p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p><strong>Sexo: </strong>{consulta.sexo}</p>
+                    </Card.Text>
+                    <Card.Text>
+                      <p><strong>Sexo: </strong>{consulta.idade}</p>
+                    </Card.Text>
+                  </Card.Body>
                 </Card>
               </Col>
             </div>

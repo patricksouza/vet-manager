@@ -61,52 +61,52 @@ export default function NewConsulta() {
             placeholder="Nome"
             value={nome}
             onChange={e => setNomeFunc(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Sobrenome"
             value={sobrenome}
             onChange={e => setSobreNomeFunc(e.target.value)}
-            required="true"
+            required={true}
           />
 
           <input
             placeholder="E-mail"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Telefone"
             type="number"
             value={telefone}
             onChange={e => setTelefone(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Cidade"
             value={cidade}
             onChange={e => setCidade(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Estado"
             value={estado}
             onChange={e => setEstado(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Cargo"
             value={cargo}
             onChange={e => setCargo(e.target.value)}
-            required="true"
+            required={true}
           />
           <input
             placeholder="Senha"
             value={senha}
             type="password"
             onChange={e => setSenha(e.target.value)}
-            required="true"
+            required={true}
           />
 
           <button className="button down" type="submit">Cadastrar</button>
